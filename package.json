@@ -1,0 +1,24 @@
+
+{
+  "name": "webtrend",
+  "version": "1.0.0",
+  "description": "app for strat web interface in trend control system",
+  "main": "webtrend",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scripter2022/webtrend.git"
+  },
+  "author": "ScriptEr",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Scripter2022/webtrend/issues"
+  },
+  "homepage": "https://github.com/Scripter2022/webtrend#readme"
+}
