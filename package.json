@@ -16,7 +16,8 @@
   },
   "author": "ScriptEr",
   "license": "ISC",
-  "type": "module",
+
+  
   "bugs": {
     "url": "https://github.com/Scripter2022/webtrend/issues"
   },
