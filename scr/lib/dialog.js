@@ -4,7 +4,6 @@ var rl=readline.createInterface({
   input:process.stdin,
   output:process.stdout
 })
-
 exports.getDialog=()=>{
     
   rl.question("What is your host? ", function(answer) {

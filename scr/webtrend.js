@@ -1,5 +1,4 @@
 /*import lib*/
-
 // import http from "http";
 // import DomParser from "dom-parser";
 // import fs, { write } from "fs";
@@ -12,117 +11,69 @@
 const http=require('http');
 const DomParser=require('dom-parser');
 const fs=require('fs');
-const parse=require('himalaya');
+const serv=require("./lib/serv")
 
 //*********************************************************************************************** */
-
 var options = {
-  host: "192.168.3.2",
-  port: "3000",
-  path: "/",
+  host: "192.168.3.1",
+  port: "80",
+  path: "/small/html/index.html",
 };
-
 // Callback function is used to deal with response
-
 var callback = async function (response) {
-
   // Continuously update stream with
-
   var body = "";
-
   response.on("data", function (data) {
-
     body += data;
-
   });
-
   response.on("end", async function () {
-
-    console.log(body);
-
-    
-
+    //console.log(body);
     /* create files for parsing */
     /* create file JSON*/
+    // fs.writeFile(
+    //   "E:/JS/webDev/project/webtrend/scr/index.html",
+    //   body,
+    //   (err) => {
+    //     if (err) throw err;
+    //   }
+    // );
 
-    // fs.appendFile("C:/Users/ScriptEr/Documents/CODE/lan.json", j, (err) => {
-    //   if (err) throw err;
-    // });
     /**************************************************/
+
+    fs.readFile(
+      "E:/JS/webDev/project/webtrend/scr/index.html",
+      "utf8",
+      function (err, html) {
+        if (!err) {
+          //console.log(html);
 
           var parser = new DomParser();
 
-          var dom = parser.parseFromString(body);
+          var dom = parser.parseFromString(html);
 
-          let button= dom.getElementsByTagName("button").outerHTML;
+          var form = dom.getElementsByTagName("select")[0].innerHTML;
 
-          console.log(button);
-
-        
-
-
-
-          /*
-
-
-
-
-
-          fs.appendFile(
-
-            "C:/Users/ScriptEr/Documents/CODE/Trend/mass.html",  mass, (err) => {
-
-              if (err) throw err;
-
-              console.log("File was write");
-
-              var d = fs.readFile(
-
-                "C:/Users/ScriptEr/Documents/CODE/Trend/mass.html",
-
-                "utf8",
-
-                (err, data) => {
-
-                  if (err) throw err;
-
-                  console.log(
-
-                    parser
-                      .parseFromStr
-                      ing(data)
-                      .getElementsByName("W1(S)newVal")[0].value
-                  );
-                }
-              );
-            }
-          );
+          console.log(form);
+          
+          fs.writeFile("E:/JS/webDev/project/webtrend/scr/views/home.handlebars", form,  (err) => {
+            if (err) throw err;
+          }
+        );
         }
       }
-
-
-
-
-      */
-
-
-
-
-
-
-    // http
-    //   .createServer(function (request, response) {
-    //     response.end(d);
-    //   })
-    //   .listen(3000);
+    );
+    
     
   });
+
   /*create server for web view*/
 };
 // Make a request to the server
-
 var req = http.request(options, callback);
 req.end();
 process.on("uncaughtException", function (err) {
   console.log(err);
 });
+0;
+
+serv.webServer();

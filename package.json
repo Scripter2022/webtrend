@@ -1,4 +1,3 @@
-
 {
   "name": "webtrend",
   "version": "1.0.0",
@@ -16,10 +15,11 @@
   },
   "author": "ScriptEr",
   "license": "ISC",
-
-  
   "bugs": {
     "url": "https://github.com/Scripter2022/webtrend/issues"
   },
-  "homepage": "https://github.com/Scripter2022/webtrend#readme"
+  "homepage": "https://github.com/Scripter2022/webtrend#readme",
+  "dependencies": {
+    "dom-parser": "^0.1.6"
+  }
 }
