@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Scripter2022/webtrend#readme",
   "dependencies": {
-    "dom-parser": "^0.1.6"
+    "dom-parser": "^0.1.6",
+    "node-opc-da": "^1.0.7"
   }
 }

@@ -37,9 +37,7 @@ var callback = async function (response) {
     //     if (err) throw err;
     //   }
     // );
-
     /**************************************************/
-
     fs.readFile(
       "E:/JS/webDev/project/webtrend/scr/index.html",
       "utf8",
@@ -51,7 +49,7 @@ var callback = async function (response) {
 
           var dom = parser.parseFromString(html);
 
-          var form = dom.getElementsByTagName("select")[0].innerHTML;
+          var form = dom.getElementsByTagName("form")[0].innerHTML;
 
           console.log(form);
           
@@ -62,8 +60,6 @@ var callback = async function (response) {
         }
       }
     );
-    
-    
   });
 
   /*create server for web view*/

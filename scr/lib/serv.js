@@ -33,9 +33,8 @@ const port = process.env.port || 3000;
 // console.log(path)
 // Пользовательская страница 404
 
+//app.use(express.static(__dirname+'/public'));
 app.use(express.static(__dirname+'/public'));
-app.use(express.static(__dirname+'/public'));
-
 
 app.get("/", (req, res) => res.render("home"));
 
